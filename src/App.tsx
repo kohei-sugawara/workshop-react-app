@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -40,9 +40,17 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <p className="read-the-docs">changed text</p>
+
+      {/* セレクトボックスをビューに追加 begin */}
+      <label htmlFor="pet-select">Choose a pet:</label>
+      <select name="pets" id="pet-select" onChange={(e) => handleChange(e)}>
+        <option value="">--Please choose an option--</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+      </select>
+      <p>あなたの選択: {name}</p>
+      {/* セレクトボックスをビューに追加 end */}
     </>
   );
 }
