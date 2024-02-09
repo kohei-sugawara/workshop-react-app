@@ -6,6 +6,21 @@ import "./App.css";
 function App() {
   const [count, setCount] = useState(0);
 
+  const [name, setName] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    switch (true) {
+      case e.target.value === "dog":
+        setName("犬です");
+        break;
+      case e.target.value === "cat":
+        setName("猫です");
+        break;
+      default:
+        setName("ペットを選択してね");
+    }
+  };
+
   return (
     <>
       <div>
